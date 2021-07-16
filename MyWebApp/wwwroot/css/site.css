@@ -1,0 +1,82 @@
+body {
+    font-family: sans-serif;
+}
+
+input, textarea {
+    font-size: 18px;
+    width: 200px;
+}
+
+input[type=submit] {
+    width: auto;
+}
+
+label {
+    font-size: 16px;
+}
+
+div#theForm {
+    background-color: white;
+}
+
+#theForm input[type=submit] {
+    background-color: #97bd97;
+    color: white;
+}
+
+
+ul.product-props li {
+    list-style-type: none;
+}
+
+.product-info {
+    border: 1px solid grey;
+    display: inline-block;
+    padding: 5px 3px 5px 3px;
+    margin: 5px;
+    width: 540px;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+.product-info img {
+    margin: 3px;
+    float: left;
+    border: 1px solid black;
+    max-width: 150px;
+}
+
+#loginToggle {
+    cursor: pointer;
+}
+
+.popup-form {
+    padding: 5px;
+    border: 2px black inset;
+    display: inline-block;
+}
+
+.popup-form input {
+    width: 200px;
+}
+
+.popup-form label {
+    width: 150px;
+    display: inline-block;
+}
+
+.popup-form input[type=checkbox], .popup-form input[type=submit] {
+    width: auto;
+}
+
+menu li {
+    display: inline;
+}
+
+menu li::after {
+    content: ' |';
+}
+
+menu li:last-of-type::after {
+    content: '';
+}
