@@ -35,7 +35,6 @@ namespace MyWebApp.Controllers
                 ViewBag.UserMessage = "Mail Sent";
                 ModelState.Clear();
             }
-
             return View();
         }
 
