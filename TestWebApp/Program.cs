@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace MyWebApp
 {
@@ -14,15 +9,21 @@ namespace MyWebApp
     {
         public static void Main(string[] args)
         {
-            // CreateHostBuilder(args).Build().Run();
-            BuildWebHost(args).Run();
+            CreateHostBuilder(args).Build().Run();
         }
 
-        // public static IHostBuilder CreateHostBuilder(string[] args) =>
-        //     Host.CreateDefaultBuilder(args)
-        //         .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(AddConfiguration)
+                .ConfigureWebHostDefaults(
+                    webBuilder => { webBuilder.UseStartup<Startup>(); });
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().Build();
+        private static void AddConfiguration(HostBuilderContext ctx, IConfigurationBuilder bldr)
+        {
+            bldr.Sources.Clear();
+            bldr.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("config.json")
+                .AddEnvironmentVariables();
+        }
     }
 }

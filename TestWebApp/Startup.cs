@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyWebApp.Data;
 using MyWebApp.Services;
 
 namespace MyWebApp
@@ -17,6 +19,10 @@ namespace MyWebApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DutchContext>(cfg =>
+            {
+                cfg.UseSqlServer();
+            });
             services.AddTransient<IMailService, NullMailService>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
@@ -39,10 +45,10 @@ namespace MyWebApp
             app.UseEndpoints(cfg =>
             {
                 cfg.MapRazorPages();
-                
-                cfg.MapControllerRoute("Default", 
-                    "/{controller}/{action}/{id?}", 
-                    new { controller = "App", action = "Index" });
+
+                cfg.MapControllerRoute("Default",
+                    "/{controller}/{action}/{id?}",
+                    new {controller = "App", action = "Index"});
             });
         }
     }
