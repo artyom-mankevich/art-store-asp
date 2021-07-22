@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DutchContextDb": "Server=;Initial Catalog=;Integrated Security=False;User=;Password=;Connect Timeout=30;MultipleActiveResultSets=True"
+  }
+}
