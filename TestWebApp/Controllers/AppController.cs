@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using MyWebApp.Data;
 using MyWebApp.Services;
 using MyWebApp.ViewModels;
 
@@ -8,11 +10,16 @@ namespace MyWebApp.Controllers
     public class AppController : Controller
     {
         private readonly IMailService _mailService;
+        private readonly IDutchRepository _dutchRepository;
+        // private readonly DutchContext _context;
 
-        public AppController(IMailService mailService)
+        public AppController(IMailService mailService, IDutchRepository dutchRepository)
         {
             _mailService = mailService;
+            _dutchRepository = dutchRepository;
+            // _context = context;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -35,6 +42,7 @@ namespace MyWebApp.Controllers
                 ViewBag.UserMessage = "Mail Sent";
                 ModelState.Clear();
             }
+
             return View();
         }
 
@@ -42,6 +50,15 @@ namespace MyWebApp.Controllers
         {
             ViewBag.Title = "About Us";
             return View();
+        }
+
+        public IActionResult Shop()
+        {
+            // var results = from product in _context.Products
+            //                                     orderby product.Category
+            //                                     select product;
+            var results = _dutchRepository.GetAllProducts();
+            return View(results);
         }
     }
 }

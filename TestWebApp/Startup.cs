@@ -23,7 +23,11 @@ namespace MyWebApp
             {
                 cfg.UseSqlServer();
             });
+            
+            services.AddTransient<DutchSeeder>();
             services.AddTransient<IMailService, NullMailService>();
+            services.AddScoped<IDutchRepository, DutchRepository>();
+            
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
         }
