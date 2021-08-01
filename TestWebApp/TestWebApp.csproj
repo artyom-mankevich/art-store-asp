@@ -37,4 +37,8 @@
       <None Include="wwwroot\ts\shopper.ts" />
     </ItemGroup>
 
+    <ItemGroup>
+      <TypeScriptCompile Include="client\src\app\views\productListView.component.ts" />
+    </ItemGroup>
+
 </Project>

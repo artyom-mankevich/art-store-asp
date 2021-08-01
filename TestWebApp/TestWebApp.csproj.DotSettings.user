@@ -1,0 +1,11 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	
+	
+	
+	
+	
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CCLIENT_005CMAIN_002E_002A_002EJS/@EntryIndexedValue">wwwroot\client\main.*.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CCLIENT_005CPOLYFILLS_002E_002A_002EJS/@EntryIndexedValue">wwwroot\client\polyfills.*.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CCLIENT_005CRUNTIME_002E_002A_002EJS/@EntryIndexedValue">wwwroot\client\runtime.*.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CCLIENT_005CSTYLES_002ECSS/@EntryIndexedValue">wwwroot\client\styles.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CCLIENT_005CSTYLES_002E_002A_002ECSS/@EntryIndexedValue">wwwroot\client\styles.*.css</s:String></wpf:ResourceDictionary>
