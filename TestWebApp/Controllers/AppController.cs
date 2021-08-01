@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyWebApp.Data;
 using MyWebApp.Services;
@@ -52,11 +53,9 @@ namespace MyWebApp.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Shop()
         {
-            // var results = from product in _context.Products
-            //                                     orderby product.Category
-            //                                     select product;
             var results = _dutchRepository.GetAllProducts();
             return View(results);
         }
